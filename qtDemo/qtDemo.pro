@@ -10,12 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    qstringapp.cpp \
     qstringencode.cpp
 
 HEADERS += \
+    qstringapp.h \
     qstringencode.h
 
 FORMS += \
+    qstringapp.ui \
     qstringencode.ui
 
 # Default rules for deployment.
