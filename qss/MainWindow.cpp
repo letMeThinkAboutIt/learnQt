@@ -7,8 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->pushButton->setFlat(true);
+    ui->pushButton->setProperty("testp", "true");
+    ui->pushButton->setProperty("testp1", "true");
     ui->pushButton_2->setObjectName("changsha");
+
+    this->setObjectName("qss");
 }
 
 MainWindow::~MainWindow()
@@ -26,66 +29,52 @@ void MainWindow::on_newWidget_clicked()
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
     QString conment;
+    conment = "ID > 属性 > 伪状态 ; 多个伪状态>一个伪状态; 特殊性一样，靠后优先；"
+              "ID 伪状态和属性 类型名称 a-b-c";
     switch (index) {
-        case 0 :
-            break;
 
-        case 1 :
-            break;
-
-        case 2 :{
+        case 1 :{
             QString strQss = R"(
-                QPushButton[flat="true"]{
-                    color:orange;
+                QPushButton{
+                    color:blue;
+                    background-color:pink;
                 }
-            )";
-            this->setStyleSheet(strQss);
-            break;
-        }
-
-        case 3 :
-            break;
-
-        case 4 :{
-
-        }
-        case 5 :{
-            QString strQss = R"(
-                QWidget>QPushButton{
+                QPushButton:hover{
+                    background-color:black;
+                }
+                QPushButton[testp1="true"]{
+                    color:green;
+                }
+                QPushButton[testp="true"]{
                     color:red;
                 }
-            )";
-            this->setStyleSheet(strQss);
-            conment = "subWidget groupbox 都是widget的子类";
-            break;
-        }
-        case 6 :{
-            QString strQss = R"(
-                .subWidget>QPushButton{
-                    color:green;
-                }
-            )";
-            this->setStyleSheet(strQss);
-            conment = "subWidget 的直接子类";
-            break;
-        }
-        case 7 :{
-            QString strQss = R"(
-                .subWidget QPushButton{
-                    color:green;
-                }
-            )";
-            this->setStyleSheet(strQss);
-            conment = "subWidget 的直接或者间接子类";
-            break;
-        }
-        case 8 :{
-            QString strQss = R"(
+
                 QPushButton#changsha{
+                    color:orange;
+                }
+                QPushButton#changsha:hover{
+                    background-color:blue;
+                }
+
+            )";
+            this->setStyleSheet(strQss);
+            break;
+        }
+        case 2 :{
+            //ID 伪状态和属性 类型名称
+            QString strQss = R"(
+
+                QWidget QPushButton#changsha{
                     color:blue;
+                    background-color:blue;
+                }
+                QWidget#qss QPushButton{
+                    color:blue;
+                    background-color:pink;
                 }
             )";
             this->setStyleSheet(strQss);
+            conment.append("有父子关系的控件，ID数会累加");
             break;
         }
     }
