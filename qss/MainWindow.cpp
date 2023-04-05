@@ -12,6 +12,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_2->setObjectName("changsha");
 
     this->setObjectName("qss");
+
+    QString strQss = R"(
+        QPushButton{
+            color:yellow;
+        }
+    )";
+    this->setStyleSheet(strQss);
+
+    strQss = R"(
+        QPushButton{
+            color:white;
+        }
+    )";
+    ui->pushButton_2->setStyleSheet(strQss);
 }
 
 MainWindow::~MainWindow()
