@@ -14,18 +14,14 @@ MainWindow::MainWindow(QWidget *parent)
     this->setObjectName("qss");
 
     QString strQss = R"(
-        QPushButton{
+        MainWindow{
             color:yellow;
+            background-color:pink;
         }
     )";
-    this->setStyleSheet(strQss);
 
-    strQss = R"(
-        QPushButton{
-            color:white;
-        }
-    )";
-    ui->pushButton_2->setStyleSheet(strQss);
+    this->setStyleSheet(strQss);
+    QCoreApplication::setAttribute(Qt::AA_UseStyleSheetPropagationInWidgetStyles, true);
 }
 
 MainWindow::~MainWindow()
