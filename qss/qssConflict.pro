@@ -11,10 +11,12 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     MainWindow.cpp \
+    nameSpaceBtn.cpp \
     subWidget.cpp
 
 HEADERS += \
     MainWindow.h \
+    nameSpaceBtn.h \
     subWidget.h
 
 FORMS += \
