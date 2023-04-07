@@ -17,7 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     QString strQss = R"(
 
         testNsQss--nameSpaceBtn{
+            color:red;
             background-color: pink;
+            qproperty-flat:true;
         }
     )";
 
