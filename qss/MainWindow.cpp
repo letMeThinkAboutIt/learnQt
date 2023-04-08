@@ -8,9 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->pushButton->setObjectName("btn1");
-    ui->pushButton_2->setObjectName("btn2");
-    ui->pushButton_3->setObjectName("btn3");
+    QPushButton * button1 = new testNsQss::nameSpaceBtn("testbtn", nullptr);
+    ui->verticalLayout->addWidget(button1);
 //testNsQss--nameSpaceBtn
 /*
 hsv 色度 饱和度 亮度
@@ -24,7 +23,7 @@ hsv 色度 饱和度 亮度
 */
     QString strQss = R"(
 
-        QPushButton#btn1{
+        QPushButton{
             background:qlineargradient(x1:0, y1:0, x2:0.5, y2:0.5,
                 stop: 0 #ff0000,
                 stop: 0.5 #00ff00,
