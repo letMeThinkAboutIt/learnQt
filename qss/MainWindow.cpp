@@ -29,6 +29,10 @@ hsv 色度 饱和度 亮度
                 stop: 0 #ff0000,
                 stop: 0.5 #00ff00,
                 stop: 1 #0000ff);
+
+            font: bold 32pt "黑体";
+            text-decoration: underline overline line-through;
+            text-align: top right;
         }
         QPushButton#btn2{
             background:qradialgradient(cx:0, cy:0, radius:0.5, fx:0.25, fy:0.25
