@@ -8,8 +8,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPushButton * button1 = new testNsQss::nameSpaceBtn("testbtn", nullptr);
-    ui->verticalLayout->addWidget(button1);
 //testNsQss--nameSpaceBtn
 /*
 hsv 色度 饱和度 亮度
@@ -22,29 +20,10 @@ hsv 色度 饱和度 亮度
 
 */
     QString strQss = R"(
+        QMainWindow {
+            background:url(4c.png) no-repeat center ;
+        }
 
-        QPushButton{
-            background:qlineargradient(x1:0, y1:0, x2:0.5, y2:0.5,
-                stop: 0 #ff0000,
-                stop: 0.5 #00ff00,
-                stop: 1 #0000ff);
-
-            font: bold 32pt "黑体";
-            text-decoration: underline overline line-through;
-            text-align: top right;
-        }
-        QPushButton#btn2{
-            background:qradialgradient(cx:0, cy:0, radius:0.5, fx:0.25, fy:0.25
-                stop: 0 #ff0000,
-                stop: 0.5 #00ff00,
-                stop: 1 #0000ff);
-        }
-        QPushButton#btn3{
-            background:qconicalgradient(cx:0.5, cy:0.5, angle:45,
-                stop: 0 #ff0000,
-                /*stop: 0.5 #00ff00,*/
-                stop: 1 #0000ff);
-        }
     )";
 
     this->setStyleSheet(strQss);
