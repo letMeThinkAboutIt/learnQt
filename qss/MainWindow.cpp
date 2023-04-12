@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->plainTextEdit->setObjectName("e1");
+    ui->plainTextEdit_2->setObjectName("e2");
+    ui->plainTextEdit_3->setObjectName("e3");
+    ui->plainTextEdit_4->setObjectName("e4");
 
 //testNsQss--nameSpaceBtn
 /*
@@ -20,8 +24,21 @@ hsv 色度 饱和度 亮度
 
 */
     QString strQss = R"(
-        QMainWindow {
-            background:url(4c.png) no-repeat center ;
+        QPlainTextEdit#e1 {
+            border-image:url(border3.png) 4 4 4 4 repeat strech ;
+            border-width:20px;
+        }
+        QPlainTextEdit#e2 {
+            border-image:url(border3.png) 4 4 4 4 strech repeat  ;
+            border-width:20px;
+        }
+        QPlainTextEdit#e3 {
+            border-image:url(border3.png) 4 4 4 4 repeat repeat ;
+            border-width:20px;
+        }
+        QPlainTextEdit#e4 {
+            border-image:url(border3.png) 4 4 4 4 strech strech ;
+            border-width:20px;
         }
 
     )";
