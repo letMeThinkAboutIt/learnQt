@@ -11,36 +11,56 @@ MainWindow::MainWindow(QWidget *parent)
     ui->plainTextEdit_2->setObjectName("e2");
     ui->plainTextEdit_3->setObjectName("e3");
     ui->plainTextEdit_4->setObjectName("e4");
+    ui->plainTextEdit_5->setObjectName("e5");
+    ui->plainTextEdit_6->setObjectName("e6");
+    ui->plainTextEdit_7->setObjectName("e7");
+    ui->plainTextEdit_8->setObjectName("e8");
 
 //testNsQss--nameSpaceBtn
 /*
-hsv 色度 饱和度 亮度
-色度 0 红色； 120 绿色； 240 蓝色； 范围 0-360
-    可以理解成一个圆环，3个点将圆环均分成3分，点与点之间的颜色用插值算出来。
-饱和度 颜色与白色的混合，色度为0就是白色
-    还是圆环，圆心为色度0，圆周为色度255，一条半径上颜色越来越偏白
-    饱和度接近0，颜色几乎是灰
-亮度 亮度为0，任何颜色都为黑色
 
+background-clip 表示显示的区域
+background-origin 表示background-image显示的区域
+
+background-color不受上面2个配置id影响，会填充整个margin
 */
     QString strQss = R"(
         QPlainTextEdit#e1 {
-            border-image:url(border3.png) 4 4 4 4 repeat strech ;
-            border-width:20px;
+            background-color:blue;
+            /*background-image:url(desktop.png);*/
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:margin;
+            background-clip:margin;
         }
         QPlainTextEdit#e2 {
-            border-image:url(border3.png) 4 4 4 4 strech repeat  ;
-            border-width:20px;
+            background-color:blue;
+            /*background-image:url(desktop.png);*/
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:border;
+            background-clip:margin;
         }
         QPlainTextEdit#e3 {
-            border-image:url(border3.png) 4 4 4 4 repeat repeat ;
-            border-width:20px;
+            background-color:blue;
+            background-image:url(desktop.png);
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:margin;
+            background-clip:margin;
         }
         QPlainTextEdit#e4 {
-            border-image:url(border3.png) 4 4 4 4 strech strech ;
-            border-width:20px;
+            background-color:blue;
+            background-image:url(desktop.png);
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:border;
+            background-clip:margin;
         }
-
     )";
 
     this->setStyleSheet(strQss);
