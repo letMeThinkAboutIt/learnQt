@@ -14,31 +14,27 @@ MainWindow::MainWindow(QWidget *parent)
 
 //testNsQss--nameSpaceBtn
 /*
-hsv 色度 饱和度 亮度
-色度 0 红色； 120 绿色； 240 蓝色； 范围 0-360
-    可以理解成一个圆环，3个点将圆环均分成3分，点与点之间的颜色用插值算出来。
-饱和度 颜色与白色的混合，色度为0就是白色
-    还是圆环，圆心为色度0，圆周为色度255，一条半径上颜色越来越偏白
-    饱和度接近0，颜色几乎是灰
-亮度 亮度为0，任何颜色都为黑色
+4个数字，代表选取多少像素作为边框的颜色。 0就会用背景色
+border-width 会把选取的像素拉伸或者压缩
 
 */
     QString strQss = R"(
         QPlainTextEdit#e1 {
-            border-image:url(border3.png) 4 4 4 4 repeat strech ;
+            border-image:url(border3.png) 1 1 1 1 repeat strech ;
             border-width:20px;
         }
         QPlainTextEdit#e2 {
-            border-image:url(border3.png) 4 4 4 4 strech repeat  ;
+            border-image:url(border3.png) 2 2 2 2 strech repeat  ;
             border-width:20px;
         }
         QPlainTextEdit#e3 {
-            border-image:url(border3.png) 4 4 4 4 repeat repeat ;
+            border-image:url(border3.png) 3 3 3 3 repeat repeat ;
             border-width:20px;
         }
         QPlainTextEdit#e4 {
-            border-image:url(border3.png) 4 4 4 4 strech strech ;
+            border-image:url(border3.png) 2 2 0 0 strech strech ;
             border-width:20px;
+            background-color:pink;
         }
 
     )";
