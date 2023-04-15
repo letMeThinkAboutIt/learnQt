@@ -14,11 +14,19 @@ MainWindow::MainWindow(QWidget *parent)
 image->border-image->background-image
 */
     QString strQss = R"(
-        QMainWindow {
-            image:url(4c.png);
+        QLabel {
+            background-color:pink;
+            margin:20px 40px 60px 80px;
+            padding:20px 40px 60px 80px;
+
+
             border-image:url(border3.png) 2 2 2 2 strech repeat;
-            background-image:url(back.bmp);
             border-width:20px;
+            border-radius:40px;
+            background-clip:margin;
+            background-origin:border;
+
+            text-align: center center;
         }
 
 
