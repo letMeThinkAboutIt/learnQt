@@ -8,28 +8,60 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->plainTextEdit->setObjectName("e1");
+    ui->plainTextEdit_2->setObjectName("e2");
+    ui->plainTextEdit_3->setObjectName("e3");
+    ui->plainTextEdit_4->setObjectName("e4");
+    ui->plainTextEdit_5->setObjectName("e5");
+    ui->plainTextEdit_6->setObjectName("e6");
+    ui->plainTextEdit_7->setObjectName("e7");
+    ui->plainTextEdit_8->setObjectName("e8");
+
 //testNsQss--nameSpaceBtn
 /*
 
-image->border-image->background-image
+background-clip 表示显示的区域
+background-origin 表示background-image显示的区域
+
+background-color不受上面2个配置id影响，会填充整个margin
 */
     QString strQss = R"(
-        QLabel {
-            background-color:pink;
-            margin:20px 40px 60px 80px;
-            padding:20px 40px 60px 80px;
-
-
-            border-image:url(border3.png) 2 2 2 2 strech repeat;
-            border-width:20px;
-            border-radius:40px;
+        QPlainTextEdit#e1 {
+            background-color:blue;
+            /*background-image:url(desktop.png);*/
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:margin;
             background-clip:margin;
-            background-origin:border;
-
-            text-align: center center;
         }
-
-
+        QPlainTextEdit#e2 {
+            background-color:blue;
+            /*background-image:url(desktop.png);*/
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:border;
+            background-clip:margin;
+        }
+        QPlainTextEdit#e3 {
+            background-color:blue;
+            background-image:url(desktop.png);
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:margin;
+            background-clip:margin;
+        }
+        QPlainTextEdit#e4 {
+            background-color:blue;
+            background-image:url(desktop.png);
+            margin:30px;
+            border:10px double red;
+            padding:30px;
+            background-origin:border;
+            background-clip:margin;
+        }
     )";
 
     this->setStyleSheet(strQss);
